@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AstroAI | Celestial Morning Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#5f5e5e",
+                        "surface-container": "#efeeea",
+                        "inverse-surface": "#30312e",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "secondary": "#674bb5",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#775a19",
+                        "on-tertiary-container": "#3b3b3b",
+                        "secondary-container": "#ab8ffe",
+                        "background": "#fbf9f5",
+                        "surface-variant": "#e4e2de",
+                        "on-background": "#1b1c1a",
+                        "on-primary-fixed": "#261900",
+                        "outline": "#7f7667",
+                        "primary": "#775a19",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#c5a059",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-surface-variant": "#4e4639",
+                        "on-surface": "#1b1c1a",
+                        "on-primary-container": "#4e3700",
+                        "secondary-fixed": "#e8ddff",
+                        "primary-fixed": "#ffdea5",
+                        "surface-container-high": "#eae8e4",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-dim": "#dbdad6",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary-fixed": "#21005e",
+                        "on-secondary-container": "#3f1e8c",
+                        "on-secondary-fixed-variant": "#4f319c",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary-container": "#a7a5a5",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#e9c176",
+                        "outline-variant": "#d1c5b4",
+                        "surface-container-highest": "#e4e2de",
+                        "inverse-on-surface": "#f2f0ed",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface": "#fbf9f5",
+                        "secondary-fixed-dim": "#cebdff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    background-color: #fbf9f5
+    }
+h1, h2, h3 {
+    font-family: "Noto Serif", serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB88KIQ9isliHMg4AqI8P5HJ4fQgevwo5DFRgaE46O83eMPgn87SyIdy5Eu93pIWbDol_GETslbEigc5ZUVYecOmFtpaxNu_XZ-rMf_IEOXZfJkJtF8muGmgSsCKVQkJ9RJaVpYNltsLA7IRYmVHCoycP7pEDMvzAPnjTQSpGDP30L1vCgm1MNxok2YErPNQJ0qSwX-9FbO9sRrNtwndPNDPQ7YZvB-eJZrIqfmfhXDFJ5MdR0DIfM6ID9jFHqnVbiji6yPOPis9MI);
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 100
+    }</style>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="grain-overlay"></div>
+<!-- Navigation Shell -->
+<nav class="bg-[#fbf9f5]/80 backdrop-blur-md dark:bg-zinc-950/80 shadow-sm shadow-[#1b1c1a]/5 docked full-width top-0 sticky z-50 flex justify-between items-center px-8 py-4 max-w-full font-['Noto_Serif'] tracking-wide text-sm">
+<div class="text-2xl font-serif tracking-tighter text-[#775a19] dark:text-[#c5a059]">AstroAI</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold" href="#">My Charts</a>
+<a class="text-[#1b1c1a]/60 dark:text-zinc-400 hover:text-[#775a19] transition-colors duration-300" href="#">Planets</a>
+<a class="text-[#1b1c1a]/60 dark:text-zinc-400 hover:text-[#775a19] transition-colors duration-300" href="#">Forecast</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-lg font-label font-semibold text-xs tracking-wider hover:scale-95 duration-150 ease-in-out">Upgrade to Cosmic</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-6xl mx-auto px-6 py-12 lg:py-20">
+<!-- Header Section -->
+<header class="text-center mb-24 relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/5 blur-3xl rounded-full"></div>
+<p class="font-label text-primary tracking-[0.2em] mb-4 text-xs font-semibold uppercase">Celestial Morning Report</p>
+<h1 class="text-5xl lg:text-7xl font-headline text-on-surface mb-6 tracking-tight">The Radiance of Self</h1>
+<div class="flex flex-col items-center gap-6">
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed italic">
+                    "A profound alignment for Alex Chen, calculated under the zenith of the morning sun. Your Vedic path reveals a season of clarity and renewed vital energy."
+                </p>
+<button class="group flex items-center gap-3 px-8 py-4 bg-primary text-on-primary rounded-xl font-label font-bold shadow-2xl shadow-primary/20 hover:scale-[1.02] transition-all">
+<span class="material-symbols-outlined">download_for_offline</span>
+                    Download PDF Report
+                </button>
+</div>
+</header>
+<!-- Asymmetric Bento Grid for Insights -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Personality: Large Focus Card -->
+<section class="md:col-span-8 bg-surface-container-lowest p-8 lg:p-12 rounded-xl border border-outline-variant/15 shadow-[0_20px_40px_rgba(27,28,26,0.03)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">brightness_7</span>
+</div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h2 class="text-2xl font-headline">Core Personality</h2>
+</div>
+<div class="space-y-6 max-w-2xl">
+<p class="text-on-surface leading-loose text-lg">
+                        Your Ascendant in Leo combined with a Moon in Bharani Nakshatra creates a persona of <strong>Commanding Compassion</strong>. You possess an innate ability to lead through creative expression, though your internal world is a crucible of transformation. 
+                    </p>
+<p class="text-on-surface-variant leading-loose">
+                        The current Jupiter transit through your 9th house suggests a broadening of your philosophical horizons. You are moving from a phase of "seeking" to a phase of "knowing." This transition requires you to trust your intuition as much as your intellect.
+                    </p>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant/10 flex flex-wrap gap-4">
+<span class="px-4 py-2 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold rounded-full tracking-wide">LEO RISING</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-full tracking-wide">MOON IN ARIES</span>
+<span class="px-4 py-2 bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-full tracking-wide">SOLAR RADIANCE</span>
+</div>
+</section>
+<!-- Love & Connection: Tall Accent Card -->
+<section class="md:col-span-4 bg-surface-container-low p-8 rounded-xl border-l-2 border-secondary h-full shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary">favorite</span>
+<h2 class="text-2xl font-headline">Love &amp; Connection</h2>
+</div>
+<div class="space-y-6">
+<p class="text-on-surface leading-relaxed">
+                            Venus is currently harmonizing with your Rahu, indicating a period of <strong>unconventional attractions</strong>. If you are partnered, expect a sudden shift in how you share space. 
+                        </p>
+<p class="text-on-surface-variant text-sm italic">
+                            "The morning mist clears to reveal a path where two become one without losing their individual light."
+                        </p>
+</div>
+</div>
+<div class="mt-12">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/15 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img alt="Celestial profile" class="w-full h-full object-cover" data-alt="Close up of a marble sculpture of a face with soft golden hour lighting hitting the side profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPMoxhKqxV5nnEmMsA_VzduM1PpWJDY3DrJ3jZujwKvTmiNqIN8QmB7wioEO9_vBRjhsInIiaCxPgr3b6gO71idLGUg2Kox0-pFNKrD3Zo4CZS3DmiAaUxqIikukjpb8vjFLORjnshigachbE8My9hi5j2tFb0Qzsre-wRVL7nhbU4ArHANYsiOklOXOm2vNPRV9afTqZP-w9Sh30fdmlcixHn1zYQlOj7CpQhKH_lVOwWrJY6knffwMZSWWPEqBN0aif0XOIGaWk"/>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary tracking-widest uppercase">Transit Alert</p>
+<p class="text-sm font-semibold">Venus Trine Jupiter</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Career & Abundance: Landscape Card -->
+<section class="md:col-span-6 bg-surface-container-lowest p-8 lg:p-10 rounded-xl border border-outline-variant/15 shadow-sm relative group overflow-hidden">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<h2 class="text-2xl font-headline">Career &amp; Abundance</h2>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="bg-surface-container-low/50 p-6 rounded-lg">
+<h3 class="font-headline text-lg mb-2">The Saturn Return Echo</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Professional stability is being redefined. It is no longer about the height of the ladder, but the strength of the foundation. Focus on legacy projects.
+                        </p>
+</div>
+<div class="flex items-center justify-between p-4 border border-outline-variant/15 rounded-lg">
+<span class="font-label text-sm font-bold">Financial Flux</span>
+<div class="flex gap-1">
+<div class="w-2 h-6 bg-primary rounded-full"></div>
+<div class="w-2 h-6 bg-primary rounded-full"></div>
+<div class="w-2 h-6 bg-primary/30 rounded-full"></div>
+<div class="w-2 h-6 bg-primary/10 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Health & Ritual: Visual Insight Card -->
+<section class="md:col-span-6 bg-surface-container-lowest p-8 lg:p-10 rounded-xl border border-outline-variant/15 shadow-sm overflow-hidden">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary">self_improvement</span>
+<h2 class="text-2xl font-headline">Health &amp; Ritual</h2>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 items-center">
+<div class="w-full lg:w-1/2 aspect-square rounded-xl overflow-hidden shadow-inner border border-outline-variant/15">
+<img alt="Meditation ritual" class="w-full h-full object-cover" data-alt="Overhead shot of a minimal meditation space with a ceramic bowl, single lotus flower, and soft morning sunlight on a pale wood floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSJ87VLxoVhGbVVTRXOCnhTRc_yo4LeLl0S45BdC666uDb4y9f7YJrtxxupI6qY9dacHvEp-1mB4h2qLtIhP1SPKWFUlWTt16dQOV8WsRLH94zbf5tFkqMEGECOqNO5849KLDMaINw9NdeQM_b-wxXEVyOot51OX1OORtvsinPbA_ofiEXkEw2ZAgyL-wksGHHgvJk6BwtGKxd-5G9amBI7DLPXK15Jvr7Wwjebva06h_m8SaKRWpOu-izjsw3f1N3bXjrTBevyYo"/>
+</div>
+<div class="w-full lg:w-1/2 space-y-4">
+<p class="text-on-surface leading-relaxed font-medium">Your Prana is currently centered in the heart-plexus.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Morning Pranayama (15 mins)
+                            </li>
+<li class="flex items-start gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Saffron-infused warm water
+                            </li>
+<li class="flex items-start gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs mt-1">check_circle</span>
+                                Evening Digital Detox
+                            </li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<!-- Detailed Transit Timeline Section -->
+<section class="mt-24">
+<h2 class="text-3xl font-headline mb-12 text-center">Celestial Timeline</h2>
+<div class="space-y-4">
+<div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="w-32 shrink-0">
+<p class="font-bold text-xs tracking-tighter text-on-surface-variant uppercase">OCT 14, 2024</p>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg">Solar Conjunction</h4>
+<p class="text-sm text-on-surface-variant">A moment of extreme clarity regarding your personal mission.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase">High Energy</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 bg-surface-container-low rounded-xl group hover:bg-surface-container-high transition-colors">
+<div class="w-32 shrink-0">
+<p class="font-bold text-xs tracking-tighter text-on-surface-variant uppercase">NOV 02, 2024</p>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg">Mercury Retrograde Entrance</h4>
+<p class="text-sm text-on-surface-variant">Review all contracts and major communication channels.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase">Reflection</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Quote Footer Action -->
+<footer class="mt-32 text-center pb-20">
+<div class="max-w-xl mx-auto space-y-8">
+<div class="w-12 h-px bg-outline-variant/30 mx-auto"></div>
+<p class="font-headline text-3xl italic text-primary/80">"The stars only reveal the path; it is your light that must walk it."</p>
+<div class="flex justify-center gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-lg font-bold shadow-xl shadow-primary/20 hover:translate-y-[-2px] transition-transform">Download Full Report</button>
+<button class="px-8 py-3 border border-outline-variant/30 text-on-surface rounded-lg font-bold hover:bg-surface-container-low transition-colors">Share Insights</button>
+</div>
+<p class="text-[10px] text-on-surface-variant/40 tracking-widest uppercase mt-12">Calculated by AstroAI Cosmic Engine v4.2</p>
+</div>
+</footer>
+</main>
+<!-- Floating Navigation for Mobile -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-surface-container-highest/90 backdrop-blur-xl border border-outline-variant/20 rounded-full px-6 py-4 flex justify-around items-center shadow-2xl z-50">
+<button class="flex flex-col items-center gap-1 text-[#775a19]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Daily</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface/40">
+<span class="material-symbols-outlined">brightness_5</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Chart</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface/40">
+<span class="material-symbols-outlined">swap_calls</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Transit</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface/40">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Archive</span>
+</button>
+</div>
+</body></html>

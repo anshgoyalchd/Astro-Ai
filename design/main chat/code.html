@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AstroAI | Celestial Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#5f5e5e",
+                    "surface-container": "#efeeea",
+                    "inverse-surface": "#30312e",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "secondary": "#674bb5",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#775a19",
+                    "on-tertiary-container": "#3b3b3b",
+                    "secondary-container": "#ab8ffe",
+                    "background": "#fbf9f5",
+                    "surface-variant": "#e4e2de",
+                    "on-background": "#1b1c1a",
+                    "on-primary-fixed": "#261900",
+                    "outline": "#7f7667",
+                    "primary": "#775a19",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#c5a059",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-surface-variant": "#4e4639",
+                    "on-surface": "#1b1c1a",
+                    "on-primary-container": "#4e3700",
+                    "secondary-fixed": "#e8ddff",
+                    "primary-fixed": "#ffdea5",
+                    "surface-container-high": "#eae8e4",
+                    "surface-container-low": "#f5f3ef",
+                    "surface-dim": "#dbdad6",
+                    "surface-bright": "#fbf9f5",
+                    "on-secondary-fixed": "#21005e",
+                    "on-secondary-container": "#3f1e8c",
+                    "on-secondary-fixed-variant": "#4f319c",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "tertiary-fixed": "#e4e2e1",
+                    "tertiary-container": "#a7a5a5",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#e9c176",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#e9c176",
+                    "outline-variant": "#d1c5b4",
+                    "surface-container-highest": "#e4e2de",
+                    "inverse-on-surface": "#f2f0ed",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "surface": "#fbf9f5",
+                    "secondary-fixed-dim": "#cebdff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        }
+      }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    background-color: #fbf9f5
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD4ophQe087NjgNpphLtim3hQUGhyl8RuJIkTwxpjIE_Qwmd7cDOoZ4A8VKYCTSeiFFgcEhIXSW4rg2Vi4PkIqKinbCXS-i2tgDlWMfF33EgQ83zaVntX8Bi29MzcAfbWmUpjwzGRqw1dVWnNyTStkOz2YmUZpGcpKy1z_RuPRRr1ZtdMm7kxHCGNdrOqXG_87vOqjan8TAX3lvmEoIgFMqKv5pZIVpwqjDOOZF7-C8N8iwk2jkHoz7H5cJ5uNHffxM4LvgN7iZOrw);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-surface text-on-surface flex h-screen overflow-hidden">
+<div class="fixed inset-0 grain-overlay z-0"></div>
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="h-screen w-72 left-0 top-0 fixed bg-[#f2efe9] dark:bg-zinc-900 flex flex-col py-6 pl-4 z-40 transition-all duration-300">
+<div class="flex items-center gap-3 mb-10 px-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h1 class="font-serif text-lg text-[#775a19]">Celestial Insights</h1>
+<p class="text-[10px] uppercase tracking-widest text-[#1b1c1a]/50">Vedic Wisdom via AI</p>
+</div>
+</div>
+<div class="px-4 mb-8">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl flex items-center justify-center gap-2 font-semibold shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Reading
+            </button>
+</div>
+<nav class="flex-1 overflow-y-auto space-y-1">
+<div class="px-4 mb-2">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase tracking-[0.2em]">Recent Charts</span>
+</div>
+<!-- Dynamic Navigation Mapping from JSON logic -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#fbf9f5] dark:bg-zinc-800 text-[#775a19] rounded-r-full mr-4 font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>Daily Ritual</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 dark:text-zinc-500 hover:bg-[#fbf9f5]/50 hover:translate-x-1 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_5">brightness_5</span>
+<span>Birth Chart</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 dark:text-zinc-500 hover:bg-[#fbf9f5]/50 hover:translate-x-1 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="swap_calls">swap_calls</span>
+<span>Transit Map</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 dark:text-zinc-500 hover:bg-[#fbf9f5]/50 hover:translate-x-1 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="front_hand">front_hand</span>
+<span>Palmistry AI</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 dark:text-zinc-500 hover:bg-[#fbf9f5]/50 hover:translate-x-1 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Historical Archive</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 hover:bg-[#fbf9f5]/50 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1b1c1a]/70 hover:bg-[#fbf9f5]/50 transition-all rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-72 flex flex-col relative bg-surface">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="bg-[#fbf9f5]/80 backdrop-blur-md dark:bg-zinc-950/80 sticky top-0 z-50 flex justify-between items-center px-8 py-4 max-w-full shadow-sm shadow-[#1b1c1a]/5">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif tracking-tighter text-[#775a19] dark:text-[#c5a059]">AstroAI</span>
+<nav class="hidden md:flex items-center gap-6 font-['Noto_Serif'] tracking-wide text-sm">
+<a class="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold" href="#">My Charts</a>
+<a class="text-[#1b1c1a]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Planets</a>
+<a class="text-[#1b1c1a]/60 hover:text-[#775a19] transition-colors duration-300" href="#">Forecast</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container px-4 py-1.5 rounded-full">
+<span class="text-[11px] font-bold text-on-surface/60 uppercase tracking-widest mr-3">Pro Plan</span>
+<button class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold hover:scale-105 transition-transform">
+                        Upgrade to Cosmic
+                    </button>
+</div>
+<img alt="User avatar" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="portrait of a serene woman with a peaceful expression, warm natural lighting, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8y4BCk2JcfNtAX289O03jkFo2d-NH2__Dt7-9ESHgMSFXtwxZ_r7WQKEXhPe8BZQ2AMWVZtsMIgkmElOiar4vsXKMxlhcirO7ItQShtDKRFzisIFIyXEIlA_v6V9BKG1gTaxL-ILMRF8yO2JOO4WMxIY9PbcFROT67n5XSiviablNacFPk83Vtt36-ifWDN6RawIhsDxAd3h4JaUk6rQaVNfujdUNzRrfls3bgEn33Ru2HBgiKOTyOxKEIEkFc3jw3Qa3jijhQt4"/>
+</div>
+</header>
+<!-- Chat Conversation Flow -->
+<section class="flex-1 overflow-y-auto px-8 md:px-24 py-12 space-y-10">
+<!-- AI Welcome Message -->
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-headline text-4xl mb-4 text-on-surface">The Stars Align for You</h2>
+<p class="text-on-surface/60 text-lg leading-relaxed">Your personal Vedic guide is ready to interpret the cosmic shifts in your transit today. Ask about your career, relationships, or spiritual path.</p>
+</div>
+<!-- Chat Bubble: User -->
+<div class="flex justify-end group">
+<div class="max-w-[70%] bg-secondary/10 border border-secondary/5 rounded-2xl rounded-tr-none px-6 py-4 shadow-sm">
+<p class="text-on-surface leading-relaxed">Can you look at my Jupiter transit for the next three months? I'm feeling a pull towards a major career shift.</p>
+<span class="block text-[10px] mt-2 text-secondary font-bold uppercase tracking-tighter">10:42 AM</span>
+</div>
+</div>
+<!-- Chat Bubble: AI -->
+<div class="flex justify-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex-shrink-0 flex items-center justify-center text-primary border border-primary/10">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="max-w-[75%] bg-surface-container-low rounded-2xl rounded-tl-none px-7 py-6 relative">
+<!-- Transit Chip (Design System) -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full mb-4">
+<span class="material-symbols-outlined text-[12px]" data-icon="brightness_7">brightness_7</span>
+                        JUPITER IN TAURUS
+                    </div>
+<h3 class="font-headline text-xl text-primary mb-3">Abundance is taking root.</h3>
+<p class="text-on-surface leading-relaxed mb-4">
+                        Jupiter's current movement through your 10th house of career suggests a period of **Expansion through Stability**. Unlike the volatile shifts of Mars, Jupiter in Taurus asks you to build on solid ground.
+                    </p>
+<p class="text-on-surface leading-relaxed">
+                        The "pull" you feel is the North Node aligning with your Midheaven. It is a sacred window for launching long-term ventures. Your next moon cycle (Oct 14th) is the peak moment for decisive action.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/15 flex gap-2">
+<button class="text-[11px] font-bold text-secondary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="show_chart">show_chart</span>
+                            View Transit Chart
+                        </button>
+</div>
+</div>
+</div>
+<!-- Chat Bubble: User -->
+<div class="flex justify-end group">
+<div class="max-w-[70%] bg-secondary/10 border border-secondary/5 rounded-2xl rounded-tr-none px-6 py-4 shadow-sm">
+<p class="text-on-surface leading-relaxed">Should I focus on my current project or start something completely new in the arts?</p>
+<span class="block text-[10px] mt-2 text-secondary font-bold uppercase tracking-tighter">10:45 AM</span>
+</div>
+</div>
+</section>
+<!-- Input Area Shell -->
+<footer class="px-8 md:px-24 pb-8 pt-4 bg-gradient-to-t from-surface via-surface to-transparent">
+<div class="max-w-4xl mx-auto">
+<div class="relative bg-surface-container-highest rounded-2xl p-2 shadow-lg shadow-on-surface/5 border border-outline-variant/10">
+<div class="flex items-end gap-2 px-4 py-2">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder-on-surface/40 py-2 resize-none leading-relaxed overflow-hidden" placeholder="Ask the cosmos..." rows="1"></textarea>
+<div class="flex items-center gap-2 pb-1">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="attachment">attachment</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-center px-4 py-1 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<button class="text-[10px] font-bold text-on-surface/40 uppercase tracking-widest hover:text-primary transition-colors">Palm Reading</button>
+<button class="text-[10px] font-bold text-on-surface/40 uppercase tracking-widest hover:text-primary transition-colors">Love Synastry</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">2 messages left today</span>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></div>
+</div>
+</div>
+</div>
+<p class="text-center text-[10px] text-on-surface/30 mt-4 tracking-tight">AI interpretations are for spiritual guidance only. Consult your chart for specific alignments.</p>
+</div>
+</footer>
+<!-- Floating Insight Chip (Optional Interaction Indicator) -->
+<div class="fixed right-8 bottom-32 flex flex-col gap-3">
+<div class="bg-surface-container-lowest shadow-xl border border-outline-variant/15 p-4 rounded-2xl w-48 animate-bounce-slow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="stars">stars</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Celestial Alert</span>
+</div>
+<p class="text-[11px] leading-tight text-on-surface/70">Mercury is entering Retrograde in 4 hours. Prepare your communications.</p>
+</div>
+</div>
+</main>
+<!-- Visual Polish: Backdrop Decorative Elements -->
+<div class="fixed -top-24 -right-24 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed top-1/2 -left-24 w-64 h-64 bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+</body></html>
